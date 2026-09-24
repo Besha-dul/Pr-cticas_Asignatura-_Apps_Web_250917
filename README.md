@@ -1,7 +1,7 @@
 # Prácticas de la Asignatura de Aplicaciones Web
 ## T.S.U en Desarrollo de Software Multiplataforma
 ### Docente M.T.I Marco A. Ramírez Hernéndez 
-### Alunma: Dulce Marbella Tolentino García 
+### Alunma: Dulce Marbella Tolentino García 4°C - DSM 
 
 Periodo: Septiembre - Diciembre 2026 
 
