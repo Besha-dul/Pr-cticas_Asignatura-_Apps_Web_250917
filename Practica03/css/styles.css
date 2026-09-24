@@ -1,0 +1,126 @@
+*{
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    margin: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(145, 125, 236);
+    color: #ccc;
+    line-height: 1.6;
+    /*border-color: purple;
+    border-style: ;
+    border-width: 5px;
+    padding: 50;*/
+}
+
+nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 14px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(15, 23, 42, 0.45);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    z-index: 1000;
+    transition: 0.3s;
+}
+
+nav h2{
+    color: white;
+}
+
+nav ul{
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+nav a{
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav a:hover{ 
+    color: #c4b5fd;
+}
+
+
+/* ================= */
+/* PARALLAX GENERAL */
+/* ================= */
+
+.parallax{
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 20px;
+    position: relative;
+}
+
+
+/* CAPA OSCURA */
+
+.parallax::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.38);
+}
+
+.parallax > *{
+    position: relative;
+    z-index: 2;
+}
+
+
+/* ================= */
+/* BOTÓN CONÓCEME */
+/* ================= */
+
+.btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 28px;
+    background-color: #6d5bd0;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 25px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background-color: #8b7ce8;
+    transform: translateY(-3px);
+}
+
+
+/* ================= */
+/* FOTO DE PERFIL */
+/* ================= */
+
+.perfil {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid rgba(255, 255, 255, 0.8);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    margin-top: 40px;
+}
