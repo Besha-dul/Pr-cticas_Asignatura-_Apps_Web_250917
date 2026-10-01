@@ -63,7 +63,7 @@ nav a:hover {
 /* ================= */
 
 .parallax {
-    min-height: 100vh;
+    min-height: 50vh;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -291,4 +291,85 @@ blockquote {
 
 .datos p {
     margin: 0;
+}
+
+/* ================= */
+/* GRID              */
+/* ================= */
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* ================= */
+/* IMAGENES          */
+/* ================= */
+
+.card img {
+    width: 100px;
+    max-width: 280px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+/* ================= */
+/* REDES SOCIALES    */
+/* ================= */
+
+.redes-sociales {
+    display: flex;           /* 1. CORREGIDO: Cambiado de text-align a display */
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 20px;       /* Añade un poco de espacio con el texto de arriba */
+}
+
+.redes-sociales a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Centra el contenido verticalmente */
+    gap: 12px;
+    padding: 24px;          /* Un poco más de espacio interno */
+    width: 120px;           /* 2. NUEVO: Le damos un ancho fijo para hacer cuadraditos */
+    height: 120px;          /* 2. NUEVO: Le damos un alto fijo para hacer cuadraditos */
+    color: white;
+    background: 
+        linear-gradient( 
+            145deg, 
+            #1e293b, 
+            #334155
+    );
+
+    border-radius: 18px;
+    text-decoration: none;
+    box-shadow: 
+        0 12px 25px
+        rgba(0, 0, 0, 0.2);
+
+    transition: 0.3s;
+}
+
+.redes-sociales a:hover {
+    transform: translateY(-8px) scale(1.05);
+    background: linear-gradient(145deg, #1e293b, #6d5bd0);
+}
+
+/* 3. ¡ESTO ES LO MÁS IMPORTANTE PARA ENCOGER AL GATITO DE GITHUB! */
+.redes-sociales a svg {
+    width: 40px;            /* Controla el ancho del icono */
+    height: 40px;           /* Controla el alto del icono */
+}
+
+#redes {
+    background-color: #f1f5f9; /* Un gris pizarra muy claro y elegante */
+    color: #0f172a;            /* Cambia el texto de "Mis redes sociales" a oscuro para que se lea bien */
+}
+
+#redes h2 {
+    color: #0f172a;            /* Asegura que el título principal de la sección sea legible */
 }
