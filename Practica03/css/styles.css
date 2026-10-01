@@ -1,24 +1,24 @@
-*{
+* {
     box-sizing: border-box;
 }
 
-html{
+html {
     scroll-behavior: smooth;
 }
 
-body{
+body {
     margin: 0px;
     font-family: Arial, Helvetica, sans-serif;
-    background-color: rgb(145, 125, 236);
-    color: #ccc;
+    background-color: #6d5bd0;
+    color: #333333; /* Texto oscuro base para que no se pierda en fondos claros */
     line-height: 1.6;
-    /*border-color: purple;
-    border-style: ;
-    border-width: 5px;
-    padding: 50;*/
 }
 
-nav{
+/* ================= */
+/* NAVEGACIÓN (NAV)  */
+/* ================= */
+
+nav {
     position: fixed;
     top: 0;
     left: 0;
@@ -34,33 +34,35 @@ nav{
     transition: 0.3s;
 }
 
-nav h2{
+nav h2 {
     color: white;
+    margin: 0;
 }
 
-nav ul{
+nav ul {
     list-style: none;
     display: flex;
     gap: 25px;
+    margin: 0;
+    padding: 0;
 }
 
-nav a{
+nav a {
     color: white;
     text-decoration: none;
     font-weight: bold;
     transition: 0.3s;
 }
 
-nav a:hover{ 
+nav a:hover { 
     color: #c4b5fd;
 }
 
-
 /* ================= */
-/* PARALLAX GENERAL */
+/* PARALLAX GENERAL  */
 /* ================= */
 
-.parallax{
+.parallax {
     min-height: 100vh;
     background-size: cover;
     background-position: center;
@@ -73,154 +75,122 @@ nav a:hover{
     position: relative;
 }
 
-
-/* CAPA OSCURA */
-
-.parallax::before{
+.parallax::before {
     content: "";
     position: absolute;
     inset: 0;
     background: rgba(0,0,0,0.38);
 }
 
-.parallax > *{
+.parallax > * {
     position: relative;
     z-index: 2;
 }
 
-/* perfil{
-    width: clamp(150px, 10vw, 100px);
-    height: clamp(150px, 10vw, 100px);
+/* BACKGROUNDS HD */
+.parallax-1 { background-image: url("../assets/images/morado.png"); }
+.parallax-2 { background-image: url("../assets/images/mar.jpg"); }
+.parallax-3 { background-image: url("../assets/images/home.jpg"); }
+.parallax-4 { background-image: url("../assets/images/cima.jpg"); }
 
+/* ================================== */
+/* TARJETA CRISTAL Y PRESENTACIÓN    */
+/* ================================== */
+
+.glass {
+    display: flex;
+    align-items: center; /* Esto alinea la foto y el texto exactamente al centro vertical */
+    gap: 30px;
+    padding: 40px; /* Le da el mismo margen por los 4 lados */
+    text-align: left;
+    
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.bloque-foto {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center; /* Asegura que la foto esté centrada en su bloque */
+}
+
+.perfil {
+    width: 160px;
+    height: 160px;
     object-fit: cover;
     border-radius: 50%;
     border: 4px solid rgba(255, 255, 255, 0.8);
-
-    display: block;
-
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    display: block;
+}
+
+.contenido-derecho {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* Espaciados con un poco más de margen */
+.contenido-derecho h1 {
+    margin: 0 0 12px 0; /* Un poco más de espacio debajo del título */
+    font-size: 1.8rem;
+    color: #ffffff;
+}
+
+.contenido-derecho p {
+    margin: 0 0 10px 0; /* Separación moderada para el subtítulo */
+    color: #ffffff;
+}
+
+.contenido-derecho .cita {
+    font-style: italic;
+    margin-top: 2px;
+    margin-bottom: 22px; /* Separación más amplia antes del botón */
 }
 
 /* ================= */
-/* BOTÓN CONÓCEME */
-/* ================= 
+/* BOTÓN CONÓCEME   */
+/* ================= */
 
 .btn {
     display: inline-block;
-    margin-top: 20px;
-    padding: 12px 28px;
+    padding: 10px 28px;
     background-color: #6d5bd0;
     color: white;
     text-decoration: none;
     font-weight: bold;
     border-radius: 25px;
     transition: 0.3s;
+    align-self: center; /* Centra el botón respecto al bloque de texto */
 }
 
 .btn:hover {
     background-color: #8b7ce8;
     transform: translateY(-3px);
-}
-
-
-/* ================= */
-/* FOTO DE PERFIL */
-/* ================= 
-
-.perfil {
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 4px solid rgba(255, 255, 255, 0.8);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-    margin-top: 40px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
 /* ================= */
-/* BACKGROUNDS HD */
+/* HERO CARD         */
 /* ================= */
 
-.parallax-1{
-    background-image: url("../assets/images/inicio.jpg");
-}
-
-.parallax-2{
-    background-image: url("../assets/images/mar.jpg");
-}
-
-.parallax-3{
-    background-image: url("../assets/images/home.jpg");
-}
-
-.parallax-4{
-    background-image: url("../assets/images/cima.jpg");
-}
-
-/* 1. Alineamos la foto y el contenido en una fila horizontal */
-.glass {
-    display: flex;
-    align-items: center;       /* Centra verticalmente la foto con la columna derecha */
-    gap: 25px;                 /* Espacio de separación entre la foto y el texto */
-    padding: 40px;             /* Margen interno para que no toque los bordes */
-    text-align: left;          /* Asegura que los textos se alineen a la izquierda */
-    
-    /* Tus estilos de cristal que ya tenías */
-    background: rgba(255, 255, 255, 0.1);
-    color: #fff;
-    backdrop-filter: blur(10px);
-    border-radius: 10px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-}
-
-/* 2. Ajustamos tu clase .perfil (con el clamp corregido) */
-.perfil {
-    width: clamp(140px, 20vw, 200px);
-    height: clamp(140px, 20vw, 200px);
-    object-fit: cover;
-    border-radius: 50%;
-    border: 4px solid rgba(255, 255, 255, 0.8);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-    
-    display: block;
-}
-
-/* 3. Evitamos que la foto se aplaste si el texto es muy largo */
-.bloque-foto {
-    flex-shrink: 0;
-}
-
-/* 4. Ordenamos verticalmente los textos y el botón en la columna derecha */
-.contenido-derecho {
-    display: flex;
-    flex-direction: column;    /* Alínea los elementos hacia abajo */
-    align-items: flex-start;   /* Alinea el botón a la izquierda (en lugar de estirarlo) */
-    gap: 3px;                 /* Espaciado ordenado entre líneas y el botón */
-}
-
-/* Ajuste opcional para el botón (quita márgenes viejos si los tenía) */
-.btn {
-    margin-top: 10px;          /* Un pequeño espacio extra superior si lo prefieres */
-}
-
-
-/* ================= */
-/* HERO CARD */
-/* ================= */
-
-.hero-card{
+.hero-card {
     max-width: 700px;
     padding: 45px;
     text-align: center;
+    color: white;
 }
 
-.hero-card h1{
+.hero-card h1 {
     font-size: 3rem;
     margin-bottom: 8px;
 }
 
-.hero-card p{
+.hero-card p {
     font-size: 1.2rem;
 }
 
@@ -232,32 +202,9 @@ blockquote {
 }
 
 /* ================= */
-/* BOTON */
+/* SECCIONES Y FONDOS*/
 /* ================= */
 
-.btn {
-    display: inline-block;
-    margin-top: 15px;
-    padding: 14px 30px;
-    background-color: #6d5bd0;
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 30px;
-    transition: 0.3s;
-}
-
-.btn:hover {
-    transform: translateY(-4px);
-
-    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
-    background-color: #8b7ce8;
-    color: white; 
-}
-
-/* ================= */
-/* algo mas  */
-/* ================= */
 .seccion {
     min-height: 40vh;
     padding: 80px 8%; 
@@ -265,52 +212,44 @@ blockquote {
 
 .seccion h2 {
     font-size: 2.4rem;
-    margin-bottom: 45px;
+    margin-bottom: 35px;
     text-align: center;
 }
 
-/* ================= */
-/* COLORES SOLIDOS ALTERNOS  */
-/* ================= */
-.solido-1{
+/* Secciones de tono pastel claro (Texto oscuro) */
+.solido-1, .solido-3, .solido-5 {
     background-color: #e0d7f5;
+    color: #333333;
 }
 
-.solido-2{
+/* Secciones de tono morado oscuro (Texto blanco) */
+.solido-2, .solido-4 {
     background-color: #6d5bd0;
+    color: #ffffff;
 }
 
-.solido-3{
-    background-color: #e0d7f5;
-}
-
-.solido-4{
-    background-color: #6d5bd0;
-}
-
-.solido-5{
-    background-color: #e0d7f5;
+.solido-2 h2, .solido-4 h2 {
+    color: #ffffff;
 }
 
 /* ================= */
-/* CONTENEDORES */
+/* CONTENEDORES      */
 /* ================= */
+
 .contenedor {
     max-width: 1100px;
-    margin:auto;
+    margin: auto;
 }
 
 .card {
-    background-color: rgba(255, 255, 255, 0.88);
-    color: #333;
+    background-color: rgba(255, 255, 255, 0.95);
+    color: #333333;
     padding: 30px;
     border-radius: 20px;
     box-shadow: 0 20px 40px rgba(30, 41, 59, 0.10);
     transition: 0.3s;
-
-
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.8);
     margin-bottom: 20px;
 }
 
@@ -320,11 +259,11 @@ blockquote {
 }
 
 /* ================= */
-/* DATOS PERSONALES */
+/* DATOS PERSONALES  */
 /* ================= */ 
 
 .datos {
-    margin-top: 30px;
+    margin-top: 20px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
@@ -334,15 +273,22 @@ blockquote {
     padding: 20px;
     text-align: center;
     background: white; 
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    color: #333333;
+    box-shadow: 0 4px 10px rgba(19, 18, 18, 0.08);
     border-radius: 18px;
+    transition: 0.3s;
 }
 
+.datos article:hover {
+    transform: translateY(-5px);
+}
 
+.datos h3 {
+    margin-top: 0;
+    margin-bottom: 8px;
+    color: #6d5bd0;
+}
 
-
-
-
-
-
-
+.datos p {
+    margin: 0;
+}
