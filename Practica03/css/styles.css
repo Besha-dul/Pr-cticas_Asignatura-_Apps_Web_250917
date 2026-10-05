@@ -9,7 +9,7 @@ html {
 body {
     margin: 0px;
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #6d5bd0;
+    background-color: #634186; /* NUEVO: Morado elegante */
     color: #333333; /* Texto oscuro base para que no se pierda en fondos claros */
     line-height: 1.6;
 }
@@ -55,7 +55,7 @@ nav a {
 }
 
 nav a:hover { 
-    color: #c4b5fd;
+    color: #58887B; /* NUEVO: Resalte en turquesa de la paleta */
 }
 
 /* ================= */
@@ -75,6 +75,12 @@ nav a:hover {
     position: relative;
 }
 
+/* NUEVA CLASE EXCLUSIVA PARA ALINEAR A LA IZQUIERDA */
+.parallax-izquierda {
+    justify-content: flex-start ;
+    padding: 80px 7%;
+}
+
 .parallax::before {
     content: "";
     position: absolute;
@@ -88,10 +94,10 @@ nav a:hover {
 }
 
 /* BACKGROUNDS HD */
-.parallax-1 { background-image: url("../assets/images/morado.png"); }
-.parallax-2 { background-image: url("../assets/images/mar.jpg"); }
-.parallax-3 { background-image: url("../assets/images/home.jpg"); }
-.parallax-4 { background-image: url("../assets/images/cima.jpg"); }
+.parallax-1 { background-image: url("../assets/images/lila.jpg"); }
+.parallax-2 { background-image: url("../assets/images/lila.jpg"); }
+.parallax-3 { background-image: url("../assets/images/lila.jpg"); }
+.parallax-4 { background-image: url("../assets/images/lila.jpg"); }
 
 /* ================================== */
 /* TARJETA CRISTAL Y PRESENTACIÓN    */
@@ -162,7 +168,7 @@ nav a:hover {
 .btn {
     display: inline-block;
     padding: 10px 28px;
-    background-color: #6d5bd0;
+    background-color: #634186; /* NUEVO: Cambiado al nuevo morado */
     color: white;
     text-decoration: none;
     font-weight: bold;
@@ -172,7 +178,7 @@ nav a:hover {
 }
 
 .btn:hover {
-    background-color: #8b7ce8;
+    background-color: #58887B; /* NUEVO: El botón cambia a turquesa al pasar el cursor */
     transform: translateY(-3px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
@@ -221,13 +227,13 @@ blockquote {
 
 /* Secciones de tono pastel claro (Texto oscuro) */
 .solido-1, .solido-3, .solido-5 {
-    background-color: #e0d7f5;
+    background-color: #f4f0fa; /* NUEVO: Blanco sutilmente morado para máxima nitidez */
     color: #333333;
 }
 
 /* Secciones de tono morado oscuro (Texto blanco) */
 .solido-2, .solido-4 {
-    background-color: #6d5bd0;
+    background-color: #634186; /* NUEVO: Fondo morado de tu paleta */
     color: #ffffff;
 }
 
@@ -261,39 +267,63 @@ blockquote {
     box-shadow: 0 20px 40px rgba(30, 41, 59, 0.10);
 }
 
-/* ================= */
-/* DATOS PERSONALES  */
-/* ================= */ 
+/* =================================================== */
+/* CONFIGURACIÓN DE COLUMNAS PARA CADA TIPO DE SECCIÓN */
+/* =================================================== */
 
-.datos {
+.datos-4, .datos-3, .datos-hobbies {
     margin-top: 20px;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
     gap: 20px;
+    justify-content: center; /* Centra los grupos de tarjetas fijas */
 }
 
-.datos article {
-    padding: 20px;
+/* 1. Para las secciones que tienen 4 tarjetas (Acerca de mí) */
+.datos-4 {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+/* 2. Para las secciones que tienen 3 tarjetas (Aspiraciones y Favoritos) */
+.datos-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+/* 3. Para tus Hobbies (6 tarjetas distribuidas en 2 filas de 3) */
+.datos-hobbies {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+/* Estilos visuales unificados con tamaño fijo idéntico al de Edad */
+.datos-4 article, .datos-3 article, .datos-hobbies article {
+    padding: 30px;
     text-align: center;
-    background: white; 
+    background-color: rgba(255, 255, 255, 0.95); 
     color: #333333;
-    box-shadow: 0 4px 10px rgba(19, 18, 18, 0.08);
-    border-radius: 18px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    box-shadow: 0 20px 40px rgba(30, 41, 59, 0.10);
+    backdrop-filter: blur(10px);
     transition: 0.3s;
+    width: 240px; /* Tamaño de ancho unificado */
+    box-sizing: border-box;
 }
 
-.datos article:hover {
-    transform: translateY(-5px);
+.datos-4 article:hover, .datos-3 article:hover, .datos-hobbies article:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(30, 41, 59, 0.15);
 }
 
-.datos h3 {
+.datos-4 h3, .datos-3 h3, .datos-hobbies h3 {
     margin-top: 0;
     margin-bottom: 8px;
-    color: #6d5bd0;
+    color: #634186; /* NUEVO: Títulos internos con el morado de la paleta */
+    font-size: 1.2rem;
 }
 
-.datos p {
+.datos-4 p, .datos-3 p, .datos-hobbies p {
     margin: 0;
+    font-size: 1rem;
+    color: #333333;
 }
 
 /* ================= */
@@ -303,7 +333,7 @@ blockquote {
 .grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 25;
+    gap: 25px; /* Corregido agregando px */
     max-width: 1200px;
     margin: auto;
 }
@@ -324,55 +354,129 @@ blockquote {
 /* ================= */
 
 .redes-sociales {
-    display: flex;           /* 1. CORREGIDO: Cambiado de text-align a display */
+    display: flex;
     justify-content: center;
     flex-wrap: wrap;
     gap: 20px;
-    margin-top: 20px;       /* Añade un poco de espacio con el texto de arriba */
+    margin-top: 20px;
 }
 
 .redes-sociales a {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center; /* Centra el contenido verticalmente */
+    justify-content: center;
     gap: 12px;
-    padding: 24px;          /* Un poco más de espacio interno */
-    width: 120px;           /* 2. NUEVO: Le damos un ancho fijo para hacer cuadraditos */
-    height: 120px;          /* 2. NUEVO: Le damos un alto fijo para hacer cuadraditos */
+    padding: 24px;
+    width: 120px;
+    height: 120px;
     color: white;
-    background: 
-        linear-gradient( 
-            145deg, 
-            #1e293b, 
-            #334155
-    );
-
+    background: linear-gradient(145deg, #1e293b, #334155);
     border-radius: 18px;
     text-decoration: none;
-    box-shadow: 
-        0 12px 25px
-        rgba(0, 0, 0, 0.2);
-
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
     transition: 0.3s;
 }
 
 .redes-sociales a:hover {
     transform: translateY(-8px) scale(1.05);
-    background: linear-gradient(145deg, #1e293b, #6d5bd0);
+    background: linear-gradient(145deg, #1e293b, #634186); /* NUEVO: Cambia al morado de la paleta */
 }
 
-/* 3. ¡ESTO ES LO MÁS IMPORTANTE PARA ENCOGER AL GATITO DE GITHUB! */
 .redes-sociales a svg {
-    width: 40px;            /* Controla el ancho del icono */
-    height: 40px;           /* Controla el alto del icono */
+    width: 40px;
+    height: 40px;
 }
 
 #redes {
-    background-color: #f1f5f9; /* Un gris pizarra muy claro y elegante */
-    color: #0f172a;            /* Cambia el texto de "Mis redes sociales" a oscuro para que se lea bien */
+    background-color: #1E293B; /* NUEVO: Fondo oscuro elegante para el cierre */
+    color: #ffffff;            /* Cambiamos el texto a blanco para que contraste */
 }
 
 #redes h2 {
-    color: #0f172a;            /* Asegura que el título principal de la sección sea legible */
+    color: #ffffff;            /* El título también en blanco */
 }
+
+
+/* ======================================= */
+/* REJILLA Y TARJETAS CRISTAL FAVORITOS    */
+/* ======================================= */
+
+/* Contenedor principal en rejilla de 3 columnas */
+div.datos-favoritos {
+    margin-top: 40px !important;
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 30px !important;
+    justify-items: center !important;
+    align-items: start !important;
+    max-width: 1000px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+/* Tarjeta individual - Caja vertical fija */
+div.datos-favoritos article.card-favorito {
+    display: flex !important;
+    flex-direction: column !important;
+    overflow: hidden !important;
+    position: relative !important;
+    width: 250px !important;       /* Ancho fijo para que no se estire */
+    min-height: 420px !important;  /* Altura fija para formato póster */
+    max-width: 250px !important;
+    box-sizing: border-box !important;
+    
+    /* Efecto cristal translúcido */
+    background: rgba(255, 255, 255, 0.1) !important; 
+    backdrop-filter: blur(15px) !important;
+    border-radius: 20px !important;
+    border: 1px solid rgba(255, 255, 255, 0.25) !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2) !important;
+    
+    transition: 0.3s ease !important;
+}
+
+/* Imagen dentro de la tarjeta (Póster/Portada) */
+div.datos-favoritos article.card-favorito img {
+    width: 100% !important;        /* Forzamos a que mida lo mismo que los 250px de la tarjeta */
+    max-width: 100% !important;
+    height: 300px !important;       /* Altura vertical fija */
+    object-fit: cover !important;  /* Recorta la imagen de forma limpia sin deformar */
+    display: block !important;
+    border-radius: 20px 20px 0 0 !important;
+    margin: 0 !important;          /* Quita cualquier margen extraño inherited */
+}
+
+/* Contenedor de los textos inferiores */
+div.datos-favoritos .card-favorito-info {
+    padding: 15px !important;
+    text-align: center !important;
+    background: transparent !important;
+    flex-grow: 1 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+}
+
+/* Estilo del título (Película favorita, etc.) */
+div.datos-favoritos .card-favorito-info h3 {
+    margin: 0 0 6px 0 !important;
+    color: #ffffff !important;
+    font-size: 1.1rem !important;
+}
+
+/* Estilo del nombre de la obra (Olvidado, DNA, etc.) */
+div.datos-favoritos .card-favorito-info p {
+    margin: 0 !important;
+    font-size: 1rem !important;
+    color: #c4b5fd !important;
+    font-weight: bold !important;
+}
+
+/* Animación hover */
+div.datos-favoritos article.card-favorito:hover {
+    transform: translateY(-8px) !important;
+    background: rgba(255, 255, 255, 0.18) !important;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3) !important;
+}
+
