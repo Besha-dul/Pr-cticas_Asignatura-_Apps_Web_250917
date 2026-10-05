@@ -149,7 +149,10 @@ nav a:hover {
 .contenido-derecho .cita {
     font-style: italic;
     margin-top: 2px;
-    margin-bottom: 22px; /* Separación más amplia antes del botón */
+    margin-bottom: 22px;
+
+    border-left: 3px solid white;
+    padding-left: 8px;
 }
 
 /* ================= */
