@@ -1,3 +1,7 @@
+/* =========================================================
+   CONFIGURACION GENERAL
+   ========================================================= */
+
 * {
     box-sizing: border-box;
 }
@@ -7,35 +11,36 @@ html {
 }
 
 body {
-    margin: 0px;
+    margin: 0;
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #634186; /* NUEVO: Morado elegante */
-    color: #333333; /* Texto oscuro base para que no se pierda en fondos claros */
+    background: #2B1D35;
+    color: #F3EDF8;
     line-height: 1.6;
 }
 
-/* ================= */
-/* NAVEGACIÓN (NAV)  */
-/* ================= */
+
+/* =========================================================
+   NAVEGACION
+   ========================================================= */
 
 nav {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    padding: 14px 7%;
+    padding: 14px 3%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: rgba(15, 23, 42, 0.45);
-    backdrop-filter: blur(15px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(43, 29, 53, 0.78);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(243, 237, 248, 0.18);
     z-index: 1000;
     transition: 0.3s;
 }
 
 nav h2 {
-    color: white;
+    color: #F3EDF8;
     margin: 0;
 }
 
@@ -48,22 +53,23 @@ nav ul {
 }
 
 nav a {
-    color: white;
+    color: #F3EDF8;
     text-decoration: none;
     font-weight: bold;
     transition: 0.3s;
 }
 
-nav a:hover { 
-    color: #58887B; /* NUEVO: Resalte en turquesa de la paleta */
+nav a:hover {
+    color: #8B6AAE;
 }
 
-/* ================= */
-/* PARALLAX GENERAL  */
-/* ================= */
+
+/* =========================================================
+   PARALLAX
+   ========================================================= */
 
 .parallax {
-    min-height: 50vh;
+    min-height: 45vh;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -75,17 +81,11 @@ nav a:hover {
     position: relative;
 }
 
-/* NUEVA CLASE EXCLUSIVA PARA ALINEAR A LA IZQUIERDA */
-.parallax-izquierda {
-    justify-content: flex-start ;
-    padding: 80px 7%;
-}
-
 .parallax::before {
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(0,0,0,0.38);
+    background: rgba(43, 29, 53, 0.48);
 }
 
 .parallax > * {
@@ -93,390 +93,880 @@ nav a:hover {
     z-index: 2;
 }
 
-/* BACKGROUNDS HD */
-.parallax-1 { background-image: url("../assets/images/lila.jpg"); }
-.parallax-2 { background-image: url("../assets/images/lila.jpg"); }
-.parallax-3 { background-image: url("../assets/images/lila.jpg"); }
-.parallax-4 { background-image: url("../assets/images/lila.jpg"); }
+.parallax-izquierda {
+    justify-content: flex-start;
+    align-items: center;
+}
 
-/* ================================== */
-/* TARJETA CRISTAL Y PRESENTACIÓN    */
-/* ================================== */
+.parallax-1 {
+    background-image: url("../assets/images/fondo1.png");
+}
+
+.parallax-2 {
+    background-image: url("../assets/images/fondo2.jpg");
+}
+
+.parallax-3 {
+    background-image: url("../assets/images/fondo4.jpg");
+}
+
+.parallax-4 {
+    background-image: url("../assets/images/fondo5.jpg");
+
+
+}
+
+
+/* =========================================================
+   PORTADA
+   ========================================================= */
+
+#inicio {
+    min-height: 85vh;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 90px 5% 50px 7%;
+    background-position: center center;
+}
+
+
+/* =========================================================
+   EFECTO GLASS
+   ========================================================= */
 
 .glass {
+    background: rgba(99, 65, 134, 0.38);
+    color: #F3EDF8;
+    backdrop-filter: blur(14px);
+    border: 1px solid rgba(243, 237, 248, 0.25);
+    border-radius: 24px;
+    box-shadow: 0 25px 50px rgba(43, 29, 53, 0.35);
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.hero-card {
+    width: 75%;
+    max-width: 900px;
+    padding: 28px 35px;
     display: flex;
-    align-items: center; /* Esto alinea la foto y el texto exactamente al centro vertical */
-    gap: 30px;
-    padding: 40px; /* Le da el mismo margen por los 4 lados */
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 35px;
     text-align: left;
-    
-    background: rgba(255, 255, 255, 0.1);
-    color: #ffffff;
-    backdrop-filter: blur(10px);
-    border-radius: 15px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .bloque-foto {
     flex-shrink: 0;
-    display: flex;
-    align-items: center; /* Asegura que la foto esté centrada en su bloque */
 }
 
 .perfil {
-    width: 160px;
-    height: 160px;
+    width: clamp(180px, 20vmin, 300px);
+    height: clamp(180px, 20vmin, 300px);
     object-fit: cover;
     border-radius: 50%;
-    border: 4px solid rgba(255, 255, 255, 0.8);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
     display: block;
+    border: 5px solid #F3EDF8;
+    box-shadow: 0 10px 35px rgba(43, 29, 53, 0.45);
+    flex-shrink: 0;
 }
 
 .contenido-derecho {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    flex: 1;
 }
 
-/* Espaciados con un poco más de margen */
-.contenido-derecho h1 {
-    margin: 0 0 12px 0; /* Un poco más de espacio debajo del título */
-    font-size: 1.8rem;
-    color: #ffffff;
+.contenido-derecho h2 {
+    margin-top: 0;
+    line-height: 1.2;
+    color: #F3EDF8;
 }
 
-.contenido-derecho p {
-    margin: 0 0 10px 0; /* Separación moderada para el subtítulo */
-    color: #ffffff;
+.tagline {
+    font-size: 1rem;
+    margin: 10px 0;
+    color: #F3EDF8;
 }
 
-.contenido-derecho .cita {
+.cita {
+    font-size: 1rem;
     font-style: italic;
-    margin-top: 2px;
-    margin-bottom: 22px;
-
-    border-left: 3px solid white;
-    padding-left: 8px;
+    margin: 15px 0;
+    color: #F3EDF8;
 }
 
-/* ================= */
-/* BOTÓN CONÓCEME   */
-/* ================= */
+
+/* =========================================================
+   BOTON
+   ========================================================= */
 
 .btn {
     display: inline-block;
-    padding: 10px 28px;
-    background-color: #634186; /* NUEVO: Cambiado al nuevo morado */
-    color: white;
+    margin-top: 15px;
+    padding: 10px 22px;
+    background: #F3EDF8;
+    color: #2B1D35;
+    border-radius: 30px;
     text-decoration: none;
     font-weight: bold;
-    border-radius: 25px;
     transition: 0.3s;
-    align-self: center; /* Centra el botón respecto al bloque de texto */
 }
 
 .btn:hover {
-    background-color: #58887B; /* NUEVO: El botón cambia a turquesa al pasar el cursor */
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    transform: translateY(-4px);
+    background-color: #634186;
+    color: #F3EDF8;
+    box-shadow: 0 12px 25px rgba(43, 29, 53, 0.3);
 }
 
-/* ================= */
-/* HERO CARD         */
-/* ================= */
 
-.hero-card {
-    max-width: 700px;
-    padding: 45px;
-    text-align: center;
-    color: white;
-}
-
-.hero-card h1 {
-    font-size: 3rem;
-    margin-bottom: 8px;
-}
-
-.hero-card p {
-    font-size: 1.2rem;
-}
-
-blockquote {
-    margin: 25px auto;
-    max-width: 500px;
-    font-size: 1.3rem;
-    font-style: italic;
-}
-
-/* ================= */
-/* SECCIONES Y FONDOS*/
-/* ================= */
+/* =========================================================
+   SECCIONES
+   ========================================================= */
 
 .seccion {
     min-height: 40vh;
-    padding: 80px 8%; 
+    padding: 80px 8%;
+    scroll-margin-top: 75px;
 }
 
-.seccion h2 {
-    font-size: 2.4rem;
-    margin-bottom: 35px;
+.seccion > h2 {
     text-align: center;
+    font-size: clamp(1.55rem, 2.5vw, 2.4rem);
+    line-height: 1.25;
+    margin-bottom: 45px;
 }
 
-/* Secciones de tono pastel claro (Texto oscuro) */
-.solido-1, .solido-3, .solido-5 {
-    background-color: #f4f0fa; /* NUEVO: Blanco sutilmente morado para máxima nitidez */
-    color: #333333;
+
+/* =========================================================
+   FONDOS
+   ========================================================= */
+
+.solido-1 {
+    background: #F3EDF8;
+    color: #2B1D35;
 }
 
-/* Secciones de tono morado oscuro (Texto blanco) */
-.solido-2, .solido-4 {
-    background-color: #634186; /* NUEVO: Fondo morado de tu paleta */
-    color: #ffffff;
+.solido-2 {
+    background: #2B1D35;
+    color: #F3EDF8;
 }
 
-.solido-2 h2, .solido-4 h2 {
-    color: #ffffff;
+.solido-3 {
+    background: #E8DDF0;
+    color: #2B1D35;
 }
 
-/* ================= */
-/* CONTENEDORES      */
-/* ================= */
+.solido-4 {
+    background: #634186;
+    color: #F3EDF8;
+}
+
+.redes {
+    background: #F3EDF8;
+    color: #2B1D35;
+}
+
+
+/* =========================================================
+   CONTENEDORES
+   ========================================================= */
 
 .contenedor {
     max-width: 1100px;
     margin: auto;
 }
 
+
+/* =========================================================
+   TARJETAS
+   ========================================================= */
+
 .card {
-    background-color: rgba(255, 255, 255, 0.95);
-    color: #333333;
+    background: #FFFFFF;
+    color: #2B1D35;
     padding: 30px;
     border-radius: 20px;
-    box-shadow: 0 20px 40px rgba(30, 41, 59, 0.10);
+    box-shadow: 0 12px 30px rgba(43, 29, 53, 0.12);
     transition: 0.3s;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.8);
-    margin-bottom: 20px;
 }
 
 .card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 20px 40px rgba(30, 41, 59, 0.10);
+    box-shadow: 0 20px 40px rgba(99, 65, 134, 0.35);
 }
 
-/* =================================================== */
-/* CONFIGURACIÓN DE COLUMNAS PARA CADA TIPO DE SECCIÓN */
-/* =================================================== */
 
-.datos-4, .datos-3, .datos-hobbies {
-    margin-top: 20px;
-    display: grid;
-    gap: 20px;
-    justify-content: center; /* Centra los grupos de tarjetas fijas */
-}
+/* =========================================================
+   DATOS PERSONALES
+   ========================================================= */
 
-/* 1. Para las secciones que tienen 4 tarjetas (Acerca de mí) */
 .datos-4 {
+    margin-top: 30px;
+    display: grid;
     grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
 }
 
-/* 2. Para las secciones que tienen 3 tarjetas (Aspiraciones y Favoritos) */
-.datos-3 {
-    grid-template-columns: repeat(3, 1fr);
-}
-
-/* 3. Para tus Hobbies (6 tarjetas distribuidas en 2 filas de 3) */
-.datos-hobbies {
-    grid-template-columns: repeat(3, 1fr);
-}
-
-/* Estilos visuales unificados con tamaño fijo idéntico al de Edad */
-.datos-4 article, .datos-3 article, .datos-hobbies article {
-    padding: 30px;
+.datos-4 article {
+    padding: 20px;
     text-align: center;
-    background-color: rgba(255, 255, 255, 0.95); 
-    color: #333333;
-    border-radius: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.8);
-    box-shadow: 0 20px 40px rgba(30, 41, 59, 0.10);
-    backdrop-filter: blur(10px);
-    transition: 0.3s;
-    width: 240px; /* Tamaño de ancho unificado */
-    box-sizing: border-box;
+    background: #FFFFFF;
+    color: #2B1D35;
+    border-radius: 18px;
+    box-shadow: 0 10px 20px rgba(43, 29, 53, 0.08);
 }
 
-.datos-4 article:hover, .datos-3 article:hover, .datos-hobbies article:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 40px rgba(30, 41, 59, 0.15);
+.datos-4 article h3 {
+    color: #634186;
 }
 
-.datos-4 h3, .datos-3 h3, .datos-hobbies h3 {
-    margin-top: 0;
-    margin-bottom: 8px;
-    color: #634186; /* NUEVO: Títulos internos con el morado de la paleta */
-    font-size: 1.2rem;
-}
 
-.datos-4 p, .datos-3 p, .datos-hobbies p {
-    margin: 0;
-    font-size: 1rem;
-    color: #333333;
-}
+/* =========================================================
+   ASPIRACIONES
+   ========================================================= */
 
-/* ================= */
-/* GRID              */
-/* ================= */
-
-.grid {
+.datos-3 {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 25px; /* Corregido agregando px */
+    gap: 25px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.datos-3 article {
+    padding: 25px;
+    background: #F3EDF8;
+    color: #2B1D35;
+    border-radius: 20px;
+    box-shadow: 0 12px 30px rgba(43, 29, 53, 0.12);
+    transition: 0.3s;
+}
+
+.datos-3 article:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(99, 65, 134, 0.35);
+}
+
+.datos-3 article h3 {
+    color: #634186;
+}
+
+
+/* =========================================================
+   HOBBIES
+   ========================================================= */
+
+.datos-hobbies {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
     max-width: 1200px;
     margin: auto;
 }
 
-/* ================= */
-/* IMAGENES          */
-/* ================= */
-
-.card img {
-    width: 100px;
-    max-width: 280px;
-    object-fit: cover;
-    border-radius: 15px;
+.datos-hobbies article {
+    padding: 25px;
+    text-align: center;
+    background: #FFFFFF;
+    color: #2B1D35;
+    border-radius: 20px;
+    box-shadow: 0 12px 30px rgba(43, 29, 53, 0.12);
+    transition: 0.3s;
 }
 
-/* ================= */
-/* REDES SOCIALES    */
-/* ================= */
+.datos-hobbies article:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(99, 65, 134, 0.35);
+}
+
+.datos-hobbies article h3 {
+    color: #634186;
+}
+
+
+/* =========================================================
+   FRASES
+   ========================================================= */
+
+.frase {
+    padding: 20px 35px;
+    text-align: center;
+}
+
+.frase h2 {
+    margin: 0;
+    color: #F3EDF8;
+}
+
+
+/* =========================================================
+   FAVORITOS
+   ========================================================= */
+
+.datos-favoritos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.card-favorito {
+    overflow: hidden;
+    background: #F3EDF8;
+    color: #2B1D35;
+    border-radius: 20px;
+    box-shadow: 0 12px 30px rgba(43, 29, 53, 0.12);
+    transition: 0.3s;
+}
+
+.card-favorito:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(99, 65, 134, 0.35);
+}
+
+.card-favorito img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    display: block;
+}
+
+.card-favorito-info {
+    padding: 20px;
+    text-align: center;
+}
+
+.card-favorito-info h3 {
+    margin-top: 0;
+    color: #634186;
+}
+
+
+/* =========================================================
+   REDES SOCIALES
+   ========================================================= */
 
 .redes-sociales {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
-    margin-top: 20px;
+    max-width: 1000px;
+    margin: 30px auto 0;
 }
 
 .redes-sociales a {
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 12px;
-    padding: 24px;
-    width: 120px;
-    height: 120px;
-    color: white;
-    background: linear-gradient(145deg, #1e293b, #334155);
+    gap: 10px;
+    padding: 18px;
+    color: #F3EDF8;
+    background: linear-gradient(
+        145deg,
+        #634186,
+        #2B1D35
+    );
     border-radius: 18px;
     text-decoration: none;
-    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 12px 25px rgba(43, 29, 53, 0.2);
     transition: 0.3s;
 }
 
 .redes-sociales a:hover {
     transform: translateY(-8px) scale(1.05);
-    background: linear-gradient(145deg, #1e293b, #634186); /* NUEVO: Cambia al morado de la paleta */
+    background: linear-gradient(
+        145deg,
+        #8B6AAE,
+        #634186
+    );
 }
 
-.redes-sociales a svg {
-    width: 40px;
-    height: 40px;
+.redes-sociales svg {
+    width: 36px;
+    height: 36px;
 }
 
-#redes {
-    background-color: #1E293B; /* NUEVO: Fondo oscuro elegante para el cierre */
-    color: #ffffff;            /* Cambiamos el texto a blanco para que contraste */
-}
-
-#redes h2 {
-    color: #ffffff;            /* El título también en blanco */
+.cinco {
+    grid-template-columns: repeat(5, 1fr);
 }
 
 
-/* ======================================= */
-/* REJILLA Y TARJETAS CRISTAL FAVORITOS    */
-/* ======================================= */
+/* =========================================================
+   CARRUSEL DE FAVORITOS
+   ========================================================= */
 
-/* Contenedor principal en rejilla de 3 columnas */
-div.datos-favoritos {
-    margin-top: 40px !important;
-    display: grid !important;
-    grid-template-columns: repeat(3, 1fr) !important;
-    gap: 30px !important;
-    justify-items: center !important;
-    align-items: start !important;
-    max-width: 1000px !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
+.favoritos-intro {
+    text-align: center;
+    max-width: 650px;
+    margin: -20px auto 30px;
+    color: #2B1D35;
 }
 
-/* Tarjeta individual - Caja vertical fija */
-div.datos-favoritos article.card-favorito {
-    display: flex !important;
-    flex-direction: column !important;
-    overflow: hidden !important;
-    position: relative !important;
-    width: 250px !important;       /* Ancho fijo para que no se estire */
-    min-height: 420px !important;  /* Altura fija para formato póster */
-    max-width: 250px !important;
-    box-sizing: border-box !important;
-    
-    /* Efecto cristal translúcido */
-    background: rgba(255, 255, 255, 0.1) !important; 
-    backdrop-filter: blur(15px) !important;
-    border-radius: 20px !important;
-    border: 1px solid rgba(255, 255, 255, 0.25) !important;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2) !important;
-    
-    transition: 0.3s ease !important;
+.carrusel {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    max-width: 850px;
+    margin: auto;
 }
 
-/* Imagen dentro de la tarjeta (Póster/Portada) */
-div.datos-favoritos article.card-favorito img {
-    width: 100% !important;        /* Forzamos a que mida lo mismo que los 250px de la tarjeta */
-    max-width: 100% !important;
-    height: 300px !important;       /* Altura vertical fija */
-    object-fit: cover !important;  /* Recorta la imagen de forma limpia sin deformar */
-    display: block !important;
-    border-radius: 20px 20px 0 0 !important;
-    margin: 0 !important;          /* Quita cualquier margen extraño inherited */
+.carrusel-ventana {
+    overflow: hidden;
+    flex: 1;
+    min-width: 0;
+    border-radius: 22px;
 }
 
-/* Contenedor de los textos inferiores */
-div.datos-favoritos .card-favorito-info {
-    padding: 15px !important;
-    text-align: center !important;
-    background: transparent !important;
-    flex-grow: 1 !important;
-    display: flex !important;
-    flex-direction: column !important;
-    justify-content: center !important;
+.carrusel-pista {
+    display: flex;
+    transition: transform .45s ease;
 }
 
-/* Estilo del título (Película favorita, etc.) */
-div.datos-favoritos .card-favorito-info h3 {
-    margin: 0 0 6px 0 !important;
-    color: #ffffff !important;
-    font-size: 1.1rem !important;
+
+/* =========================================================
+   TARJETAS DEL CARRUSEL
+   ========================================================= */
+
+.favorito-card {
+    flex: 0 0 100%;
+    min-width: 0;
+    border: 1px solid #8B6AAE;
+    background: #F3EDF8;
+    color: #2B1D35;
+    border-radius: 22px;
+    overflow: hidden;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 310px;
 }
 
-/* Estilo del nombre de la obra (Olvidado, DNA, etc.) */
-div.datos-favoritos .card-favorito-info p {
-    margin: 0 !important;
-    font-size: 1rem !important;
-    color: #c4b5fd !important;
-    font-weight: bold !important;
+.favorito-card:hover {
+    box-shadow: 0 15px 35px rgba(99, 65, 134, 0.30);
 }
 
-/* Animación hover */
-div.datos-favoritos article.card-favorito:hover {
-    transform: translateY(-8px) !important;
-    background: rgba(255, 255, 255, 0.18) !important;
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3) !important;
+.favorito-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
 }
 
+.favorito-icono {
+    font-size: 6rem;
+    line-height: 1;
+    padding: 55px 0;
+}
+
+.favorito-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    padding: 16px;
+    text-align: center;
+}
+
+.favorito-info strong {
+    font-size: 1.25rem;
+    color: #634186;
+}
+
+.favorito-info small {
+    color: #2B1D35;
+    font-size: .95rem;
+}
+
+
+/* =========================================================
+   FLECHAS DEL CARRUSEL
+   ========================================================= */
+
+.carrusel-flecha {
+    border: 1px solid #8B6AAE;
+    border-radius: 50%;
+    background: #2B1D35;
+    color: #F3EDF8;
+    width: 43px;
+    height: 43px;
+    flex-shrink: 0;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.carrusel-flecha:hover {
+    background: #634186;
+}
+
+
+/* =========================================================
+   INDICADORES
+   ========================================================= */
+
+.carrusel-indicadores {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 22px;
+}
+
+.carrusel-indicadores button {
+    border: 0;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #8B6AAE;
+    cursor: pointer;
+}
+
+.carrusel-indicadores button.activo {
+    background: #634186;
+    transform: scale(1.25);
+}
+
+
+/* =========================================================
+   MODAL BLOQUEANTE
+   ========================================================= */
+
+.modal-favoritos[hidden] {
+    display: none;
+}
+
+.modal-favoritos {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: rgba(43, 29, 53, 0.96);
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    padding: 12px;
+}
+
+
+/* =========================================================
+   PANEL DEL MODAL
+   ========================================================= */
+
+.modal-panel {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 0;
+    border: 1px solid #8B6AAE;
+    border-radius: 16px;
+    overflow: hidden;
+    background: #2B1D35;
+}
+
+
+/* =========================================================
+   CABECERA DEL MODAL
+   ========================================================= */
+
+.modal-cabecera {
+    padding: 12px 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    border-bottom: 1px solid #8B6AAE;
+}
+
+.modal-cabecera h2 {
+    margin: 0;
+    font-size: clamp(1rem, 2vw, 1.35rem);
+    color: #F3EDF8;
+}
+
+
+/* =========================================================
+   BOTON CERRAR
+   ========================================================= */
+
+.modal-cerrar {
+    border: 1px solid #8B6AAE;
+    background: #634186;
+    color: #F3EDF8;
+    font-size: 1.35rem;
+    border-radius: 10px;
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+.modal-cerrar:hover {
+    background: #8B6AAE;
+}
+
+
+/* =========================================================
+   CONTENIDO DEL MODAL
+   ========================================================= */
+
+.modal-contenido {
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px;
+    overflow: hidden;
+}
+
+.modal-contenido video {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    border-radius: 8px;
+}
+
+.modal-contenido iframe {
+    width: 100%;
+    height: 100%;
+    min-height: 60vh;
+    border: 0;
+    background: #F3EDF8;
+}
+
+
+/* =========================================================
+   ESTADO DEL MODAL
+   ========================================================= */
+
+body.modal-abierto {
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   AJUSTES DE CONTRASTE Y ACCESIBILIDAD
+   ========================================================= */
+
+.solido-1,
+.solido-3,
+.redes {
+    color: #2B1D35;
+}
+
+.solido-2,
+.solido-4 {
+    color: #F3EDF8;
+}
+
+.seccion h2 {
+    font-size: clamp(1.55rem, 2.5vw, 2.1rem);
+    line-height: 1.25;
+}
+
+.seccion {
+    scroll-margin-top: 75px;
+}
+
+#inicio {
+    min-height: 85vh;
+}
+
+.card:hover {
+    box-shadow: 0 18px 35px rgba(99, 65, 134, 0.22);
+}
+
+nav a:focus-visible,
+button:focus-visible,
+a:focus-visible {
+    outline: 3px solid #8B6AAE;
+    outline-offset: 3px;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    nav {
+        padding: 12px 4%;
+    }
+
+    nav ul {
+        gap: 15px;
+    }
+
+    .hero-card {
+        width: 90%;
+        gap: 20px;
+    }
+
+    .datos-4 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .datos-3 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .datos-hobbies {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .datos-favoritos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .redes-sociales {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .cinco {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+    }
+
+    #inicio {
+        min-height: 100vh;
+        padding: 100px 20px 50px;
+    }
+
+    #inicio .hero-card {
+        width: 100%;
+        flex-direction: column;
+        text-align: center;
+        padding: 25px 20px;
+    }
+
+    .datos-4,
+    .datos-3,
+    .datos-hobbies,
+    .datos-favoritos,
+    .redes-sociales,
+    .cinco {
+        grid-template-columns: 1fr;
+    }
+
+    .perfil {
+        width: 180px;
+        height: 180px;
+    }
+
+    .seccion {
+        padding: 60px 5%;
+    }
+
+    .carrusel {
+        gap: 8px;
+    }
+
+    .carrusel-flecha {
+        width: 38px;
+        height: 38px;
+    }
+
+    .favorito-card {
+        min-height: 280px;
+    }
+
+    .favorito-card img {
+        height: 190px;
+    }
+
+    .favorito-icono {
+        font-size: 4rem;
+        padding: 40px 0;
+    }
+
+    .modal-contenido iframe {
+        min-height: 70vh;
+    }
+}
+
+
+/* Ajustes de la sección Mis favoritos */
+#favoritos {
+    height: auto;
+    min-height: 0;
+    padding: 40px 5% 60px;
+    box-sizing: border-box;
+}
+
+/* Título centrado */
+#favoritos > h2 {
+    width: 100%;
+    text-align: center;
+    margin: 0 auto 20px;
+}
+
+/* Texto introductorio */
+#favoritos .favoritos-intro {
+    max-width: 650px;
+    margin: 0 auto 30px;
+    text-align: center;
+}
+
+/* Carrusel completo */
+#favoritos .carrusel {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    width: 100%;
+    max-width: 950px;
+    margin: 0 auto;
+}
+
+/* Ventana que contiene las tarjetas */
+#favoritos .carrusel-ventana {
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+}
+
+/* Movimiento de las tarjetas */
+#favoritos .carrusel-pista {
+    display: flex;
+    transition: transform 0.45s ease;
+}
+
+/* Cada tarjeta ocupa el espacio de una diapositiva */
+#favoritos .favorito-card {
+    flex: 0 0 100%;
+    min-width: 0;
+    box-sizing: border-box;
+}
+
+/* Indicadores centrados y con espacio inferior */
+#favoritos .carrusel-indicadores {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    width: 100%;
+    margin: 22px auto 0;
+    min-height: 14px;
+}
+
+#redes > p {
+    text-align: center;
+}

@@ -18,7 +18,7 @@
     <!-- NAVEGACIÓN -->
     <!--======================-->
 
-    <nav id="inicio">
+    <nav id="navegacion">
         <ul>
 
             <li class="menu_option">
@@ -53,25 +53,19 @@
     <!-- HERO/PARALLAX 1 -->
     <!--======================-->
 
- <header id="inicio" class="parallax parallax-1 parallax-izquierda">
-    <div class="glass"> <!-- Aquí abre -->
-
-        <!-- Columna Izquierda -->
+<header id="inicio" class="parallax parallax-1 parallax-izquierda">
+    <div class="glass hero-card">
         <div class="bloque-foto">
             <img src="assets/images/Dulce.jpeg" class="perfil" alt="Foto de Dulce">
         </div>
-
-        <!-- Columna Derecha -->
         <div class="contenido-derecho">
-            <h2> 🪼 Oli (❁´◡`❁) , soy Dulce 🐈‍⬛</h2>
+            <h2>🪼 Oli (❁´◡`❁), soy Dulce 🐈‍⬛</h2>
             <p class="tagline">Estudiante | Apasionada por la tecnología | Soñadora</p>
             <p class="cita">"La disciplina de hoy construye el éxito de mañana."</p>
-            <a href="#acerca" class="btn">Conóceme</a>
+            <a href="#acercaDeMi" class="btn">Conóceme</a>
         </div>
-
-    </div> <!-- 👈 Aquí debe cerrar el glass para que encierre a ambos bloques -->
+    </div>
 </header>
-
 
 
     <!--======================-->
@@ -273,53 +267,71 @@
     <!-- FAVORITOS -->
     <!--======================-->
 
+ 
+<!-- FAVORITOS -->
+<section id="favoritos" class="section solido-4">
+    <h2>🎬 Mis favoritos</h2>
+    <p class="favoritos-intro">
+        Descubre mis historias y canciones favoritas.
+        Selecciona una tarjeta para explorar su contenido.
+    </p>
 
-  <!-- ======================================= -->
-<!-- SECCIÓN DE MIS FAVORITOS (CORREGIDA)   -->
-<!-- ======================================= -->
+    <div class="carrusel" aria-label="Carrusel de favoritos">
+        <button class="carrusel-flecha" id="anterior" type="button"
+            aria-label="Favorito anterior">&#10094;</button>
 
-<!-- 1. El Fondo Parallax con el título principal -->
-<section class="parallax parallax-4">
-    <div class="glass frase">
-        <h2> ⭐ Mis favoritos</h2>
+        <div class="carrusel-ventana">
+            <div class="carrusel-pista" id="pista">
+
+                <!-- FAVORITO 1: VIDEO -->
+                <button class="favorito-card" type="button"
+                    data-tipo="video"
+                    data-src="assets/videos/favorite_movie.mp4"
+                    data-titulo="🎮 Mi videojuego favorito: Desafío 4">
+                    <img src="assets/images/poster-pelicula.jpg"
+                        alt="Portada de Desafío 4" loading="lazy">
+                    <span class="favorito-info">
+                        <strong>🎮 Desafío 4</strong>
+                        <small>Ver tráiler MP4</small>
+                    </span>
+                </button>
+
+                <!-- FAVORITO 2: AUDIO -->
+                <button class="favorito-card" type="button"
+                    data-tipo="audio"
+                    data-src="assets/audios/favorite_song.mp3"
+                    data-titulo="🎵 Without You">
+                    <img src="assets/images/cima.jpg"
+                        alt="Portada de mi canción favorita" loading="lazy">
+                    <span class="favorito-info">
+                        <strong>🎵 Without You! - Avicii ft. Sandro Cavazza</strong>
+                        <small>Escuchar MP3</small>
+                    </span>
+                </button>
+
+                <!-- FAVORITO 3: PDF -->
+                <button class="favorito-card" type="button"
+                    data-tipo="pdf"
+                    data-src="assets/documents/favorite_book.pdf"
+                    data-titulo="📖 El juego de Ender">
+                    <img src="assets/images/lila.jpg"
+                        alt="Portada de mi libro favorito" loading="lazy">
+                    <span class="favorito-info">
+                        <strong>📖 El juego de Ender</strong>
+                        <small>Leer capítulo PDF</small>
+                    </span>
+                </button>
+
+            </div>
+        </div>
+
+        <button class="carrusel-flecha" id="siguiente" type="button"
+            aria-label="Siguiente favorito">&#10095;</button>
     </div>
+
+    <div class="carrusel-indicadores" id="indicadores"
+        aria-label="Seleccionar favorito"></div>
 </section>
-
-<!-- 2. La sección sólida morada donde viven tus 3 tarjetas de cristal -->
-<section id="favoritos" class="seccion solido-4">
-    
-    <!-- El contenedor general que alinea las tarjetas en 3 columnas -->
-    <div class="datos-favoritos">
-
-        <!-- Tarjeta 1: Película -->
-        <article class="card-favorito">
-            <img src="assets/images/poster-pelicula.jpg" alt="Póster Película">
-            <div class="card-favorito-info">
-                <h3>🎬 Película favorita</h3>
-                <p>Olvidado</p>
-            </div>
-        </article>
-
-        <!-- Tarjeta 2: Canción -->
-        <article class="card-favorito">
-            <img src="assets/images/portada-cancion.jpg" alt="Portada Canción">
-            <div class="card-favorito-info">
-                <h3>🎵 Canción favorita</h3>
-                <p>DNA</p>
-            </div>
-        </article>
-
-        <!-- Tarjeta 3: Libro -->
-        <article class="card-favorito">
-            <img src="assets/images/portada-libro.jpg" alt="Portada Libro">
-            <div class="card-favorito-info">
-                <h3>📘 Libro favorito</h3>
-                <p>El principito</p>
-            </div>
-        </article>
-
-    </div> <!-- Cierre correcto de datos-favoritos -->
-</section> <!-- Cierre correcto de la sección -->
 
 
 
@@ -524,6 +536,27 @@
 
     </section>
 
+    <!-- MODAL DE FAVORITOS -->
+<div class="modal-favoritos" id="modal-favoritos" hidden>
+    <div class="modal-panel">
+        <div class="modal-cabecera">
+            <h2 id="modal-titulo">Mi favorito</h2>
+            <button
+                class="modal-cerrar"
+                id="cerrar-modal"
+                type="button"
+                aria-label="Cerrar">
+                &times;
+            </button>
+        </div>
+        <div class="modal-contenido" id="modal-contenido"></div>
+    </div>
+</div>
+
+<!-- JavaScript -->
+<script src="JScript/app.js"></script>
+
+<script src="js/app2.js"></script>
 
 </body>
 
