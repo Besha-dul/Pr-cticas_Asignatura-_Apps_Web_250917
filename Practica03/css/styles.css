@@ -970,3 +970,366 @@ a:focus-visible {
 #redes > p {
     text-align: center;
 }
+
+
+/* Tamaño del carrusel */
+.carrusel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    width: 100%;
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+.carrusel-ventana {
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.carrusel-pista {
+    display: flex;
+    transition: transform 0.45s ease;
+}
+
+.favorito-card {
+    flex: 0 0 100%;
+    min-width: 0;
+    padding: 0;
+    border: 1px solid #475569;
+    border-radius: 20px;
+    overflow: hidden;
+    background: #f3edf8;
+    color: #293b55;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+/* La imagen completa, sin recortarse */
+.favorito-card img {
+    display: block;
+    width: 100%;
+    height: 280px;
+    object-fit: contain;
+    object-position: center;
+    background: #f3edf8;
+}
+
+/* Texto debajo de la imagen */
+.favorito-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    min-height: 70px;
+    padding: 12px;
+    text-align: center;
+}
+
+.favorito-info strong {
+    font-size: 1.1rem;
+    line-height: 1.3;
+}
+
+.favorito-info small {
+    font-size: 0.9rem;
+}
+
+/* Flechas */
+.carrusel-flecha {
+    flex-shrink: 0;
+    width: 38px;
+    height: 38px;
+    border: 1px solid #64748b;
+    border-radius: 50%;
+    background: #334155;
+    color: #fff;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+/* Indicadores */
+.carrusel-indicadores {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 15px auto 0;
+    min-height: 16px;
+}
+
+.carrusel-indicadores button {
+    width: 10px;
+    height: 10px;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: #a78bca;
+    cursor: pointer;
+}
+
+.carrusel-indicadores button.activo {
+    background: #38bdf8;
+    transform: scale(1.15);
+}
+
+/* Adaptación a celulares */
+@media (max-width: 600px) {
+    .carrusel {
+        gap: 6px;
+    }
+
+    .carrusel-flecha {
+        width: 30px;
+        height: 30px;
+        font-size: 1rem;
+    }
+
+    .favorito-card img {
+        height: 210px;
+    }
+}
+
+
+
+/* Borde superior de Mis favoritos */
+#favoritos {
+    border-top: 6px solid #293b55;
+    border-radius: 0;
+    margin-top: 0;
+}
+
+/* Fondo rectangular de Mis redes sociales */
+#redes {
+    border-top: 6px solid #293b55;
+    border-radius: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    width: 100%;
+    box-sizing: border-box;
+    background: #f3edf8;
+    padding: 55px 5% 60px;
+}
+
+/* Mantener los títulos centrados */
+#redes h2,
+#redes .redes-descripcion {
+    text-align: center;
+}
+
+/* Evitar esquinas redondeadas en la sección */
+#redes,
+#favoritos {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+
+/* Ajustar Mis favoritos */
+#favoritos {
+    border-top: 6px solid #293b55 !important;
+    border-radius: 0 !important;
+    padding: 35px 20px 30px !important;
+    margin: 0 !important;
+    min-height: auto !important;
+    height: auto !important;
+    box-sizing: border-box;
+}
+
+/* Centrar y compactar el carrusel */
+#favoritos .carrusel {
+    max-width: 900px;
+    margin: 25px auto 0;
+}
+
+#favoritos .carrusel-ventana {
+    border-radius: 18px;
+}
+
+/* Reducir el espacio de los indicadores */
+#favoritos .carrusel-indicadores {
+    margin-top: 12px;
+    margin-bottom: 0;
+}
+
+/* Sección de redes sociales */
+#redes {
+    width: 100%;
+    max-width: none !important;
+    box-sizing: border-box;
+    border-top: 6px solid #293b55 !important;
+    border-radius: 0 !important;
+    margin: 0 !important;
+    padding: 45px 5% 50px !important;
+    min-height: auto !important;
+    height: auto !important;
+}
+
+
+/* Ajustar Mis favoritos */
+#favoritos {
+    border-top: 6px solid #293b55 !important;
+    border-radius: 0 !important;
+    padding: 35px 20px 30px !important;
+    margin: 0 !important;
+    min-height: auto !important;
+    height: auto !important;
+    box-sizing: border-box;
+}
+
+/* Centrar y compactar el carrusel */
+#favoritos .carrusel {
+    max-width: 900px;
+    margin: 25px auto 0;
+}
+
+#favoritos .carrusel-ventana {
+    border-radius: 18px;
+}
+
+/* Reducir el espacio de los indicadores */
+#favoritos .carrusel-indicadores {
+    margin-top: 12px;
+    margin-bottom: 0;
+}
+
+/* Sección de redes sociales */
+#redes {
+    width: 100%;
+    max-width: none !important;
+    box-sizing: border-box;
+    border-top: 6px solid #293b55 !important;
+    border-radius: 0 !important;
+    margin: 0 !important;
+    padding: 45px 5% 50px !important;
+    min-height: auto !important;
+    height: auto !important;
+}
+
+
+/* CORRECCIÓN FINAL: sección Mis favoritos */
+#favoritos {
+    border-top: 6px solid #293b55 !important;
+    border-bottom: 6px solid #293b55 !important;
+    border-radius: 0 !important;
+    margin: 0 !important;
+    padding: 35px 20px 28px !important;
+    min-height: 0 !important;
+    height: auto !important;
+    box-sizing: border-box;
+}
+
+/* Carrusel más compacto y centrado */
+#favoritos .carrusel {
+    width: 100% !important;
+    max-width: 780px !important;
+    margin: 25px auto 0 !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+#favoritos .carrusel-ventana {
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+    border-radius: 18px;
+}
+
+/* Tarjeta más compacta */
+#favoritos .favorito-card {
+    flex: 0 0 100%;
+    min-width: 0;
+    min-height: 0 !important;
+    height: auto !important;
+    padding: 14px 12px !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 18px;
+    background: #f3edf8;
+}
+
+/* Imagen completa, sin recortar ni estirarse */
+#favoritos .favorito-card img {
+    display: block;
+    width: auto !important;
+    height: 250px !important;
+    max-width: 100% !important;
+    object-fit: contain !important;
+    object-position: center;
+    margin: 0 auto;
+    background: #f3edf8;
+}
+
+/* Texto debajo de la imagen */
+#favoritos .favorito-info {
+    width: 100%;
+    min-height: 60px;
+    padding: 10px 5px 2px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    text-align: center;
+}
+
+/* Indicadores sin espacio excesivo */
+#favoritos .carrusel-indicadores {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 12px auto 0 !important;
+    padding: 0;
+    min-height: 16px;
+}
+
+/* Fondo de redes sociales rectangular */
+#redes {
+    width: 100% !important;
+    max-width: none !important;
+    min-height: 0 !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 45px 5% 50px !important;
+    border-top: 6px solid #293b55 !important;
+    border-radius: 0 !important;
+    box-sizing: border-box;
+    background: #f3edf8 !important;
+}
+
+#redes > p {
+    text-align: center;
+}
+
+/* Adaptación a pantallas pequeñas */
+@media (max-width: 600px) {
+    #favoritos {
+        padding: 30px 10px 24px !important;
+    }
+
+    #favoritos .carrusel {
+        gap: 6px;
+    }
+
+    #favoritos .carrusel-flecha {
+        width: 30px;
+        height: 30px;
+        flex-shrink: 0;
+    }
+
+    #favoritos .favorito-card img {
+        height: 210px !important;
+    }
+}
+
