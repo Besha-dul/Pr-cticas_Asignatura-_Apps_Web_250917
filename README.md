@@ -2,7 +2,8 @@
 ## T.S.U en Desarrollo de Software Multiplataforma
 ### Docente M.T.I Marco A. Ramírez Hernéndez 
 ### Alunma: Dulce Marbella Tolentino García 4 cuatrimestre "C" - DSM 
-
+ hi a todo :D 
+ 
 Periodo: Septiembre - Diciembre 2026 
 
 ---
