@@ -254,6 +254,150 @@ Acepto términos y condiciones del uso de la plataforma MecaGest.
     <input type="color" id="backgroundColor" value="#CCC">
 </fieldset>
 
+    <fieldset>
+        <legend>Configuracion de mi Perfil</legend>
+        <label for="userPhoto" > Foto de Usuario:</label>
+
+        <input type="file" id="userPhoto" accept="image/*">
+        <input type="image" id="buttonNext" src="assents/images/next.gif" alt="Siguiente" width="50" height="50"> 
+        <br>
+        <input type="hidden" id="userId" value="250917">
+    </fieldset>
+
+    <fieldset>
+        <legend>Datos Fiscales</legend>
+        <label for="rfc"> Registro Federal de Causantes (RFC): </label>
+        <input type="text" id="rfc" maxlength="13" placeholder="TD0XXXXXXXXXX">
+        <br>
+        <label for="fiscalSituacion"> Constancia de Situacion Fiscal: </label>
+        <input type="file" id="fiscalSituacion" accept=".pdf">
+        <input type="hidden" id="userId" value="250917"> 
+    </fieldset>
+
+    <fieldset>
+        <legend> Solicitud de Cita: </legend>
+        <label for="dateAppoiment"> Fecha de la Cita: </label>
+        <input type="datetime-local" id="dateAppoiment">
+        <br>
+        <label for="descriptionText"> Descripcion de la Cita: </label>
+        <textarea id="descriptionText"> </textarea>
+    </fieldset>
+
+    <fieldset>
+        <legend> Solicitud de Herramientas y Refacciones para Servicio Mecanico: </legend>
+        <label for="resourceCategory"> Categoria de Recursos: </label>
+        <input type="radio" id="resourceRefaction" name="resourceCategory" value="refaccion"> Refaccion
+        <input type="radio" id="resourceTool" name="resourceCategory" value="tool"> Herramienta
+
+
+    </fieldset>
+
+    <fieldset>
+        <legend> Solicitud de Herramienta para Servicio Mécanico: </legend>
+        <label for="toolName"> Elgige la pieza: </label>
+        <select>
+            <optgroup label="Piezas de Motor">
+                <option value="bujia"> Bujía </option>
+                <option value="filtro_aceite"> Filtro de Aceite</option>
+                <option value="banda_distribucion"> Banda de Distribucion </option>
+            </optgroup>
+
+            <optgroup label= "Piezas de Transmision">
+                <option value="disco_enbrague"> Disco de enbrague </option>
+                <option value="collarin"> Collarín de enbrague </option>
+                <option value="junta_homocinetica"> Junta homocinetica </option>
+                <option value="semieje"> Semeije de transmision </option>
+            </optgroup>
+
+            <optgroup label="Piezas de Suspencion">
+                <option value="amortiguador"> Amortiguador </option>
+                <option value="rotula"> Rótula de suspension </option>
+            </optgroup>
+
+            <optgroup label="Llaves y Herramientas Especializadas">
+                <option value="llave_combinada"> Llave combinada </option>
+                <option value="llave_torx"> Llave dinometrica</option>
+                <option value="extractor_poleas"> Extractor de poleas </option>
+                <option value="comprensor_resortes"> Comprensor de resortes</option>
+                <option value="scanner_obd2"> Escaner automotriz ODB-II</option>
+            </optgroup>
+        </select>
+        <label for="toolQuantity"> Cantidad: </label>
+        <input type="number" id="toolQuantity" min="1" max="10">
+        <button id="requestTool">Solicitar Herramienta </button>
+        <br> 
+
+        <br> 
+        Herramientas para la orden de servicio
+
+        <table style="border: 1px solid black; border-collapse: collapse; width: 50%"> 
+            <tr>
+                <th style="border: 1px solid black">No.</th>
+                <th style="border: 1px solid black">Herramienta</th>
+                <th style="border: 1px solid black">Categoria</th>
+                <th style="border: 1px solid black">Cantidad</th>
+                <th style="border: 1px solid black">Unidad</th>
+            </tr>
+
+            <tr>
+                <td style="border: 1px solid black">1.</td>
+                <td style="border: 1px solid black">
+                    Llave combinada 
+                </td>
+                <td style="border: 1px solid black">
+                    Herramienta manual 
+                </td>
+                <td style="border: 1px solid black">4 </td>
+                <td style="border: 1px solid black">Piezas </td>
+            </tr>
+
+            <tr>
+                <td style="border: 1px solid black">2.</td>
+                <td style="border: 1px solid black">
+                    Llave dinamometrica 
+                </td>
+                <td style="border: 1px solid black">
+                    Herramienta especializada 
+                </td>
+                <td style="border: 1px solid black"> 2 </td>
+                <td style="border: 1px solid black">Piezas </td>
+            </tr>
+
+            <tr>
+                <td style="border: 1px solid black">3.</td>
+                <td style="border: 1px solid black">
+                    Extractor de poleas  
+                </td>
+                <td style="border: 1px solid black">
+                    Herramienta especializada 
+                </td>
+                <td style="border: 1px solid black"> 1 </td>
+                <td style="border: 1px solid black"> Juego </td>
+            </tr>
+
+            <tr>
+                <td style="border: 1px solid black">4.</td>
+                <td style="border: 1px solid black">
+                    Llave Torx  
+                </td>
+                <td style="border: 1px solid black">
+                    Herramienta manual 
+                </td>
+                <td style="border: 1px solid black"> 3 </td>
+                <td style="border: 1px solid black"> Juegos </td>
+            </tr>
+
+            <tr> 
+                <th colspan="3" style="border: 1px solid black; text-align: center;">Total Unidades</th> 
+                <td style="border: 1px solid black;">10</td>
+                <td style="border: 1px solid black;">-</td> 
+            </tr> 
+
+        </table>
+    </fieldset>
+
+
+
 </main>
 </body>
 </html>
