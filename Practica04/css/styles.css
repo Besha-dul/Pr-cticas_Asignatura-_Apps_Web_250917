@@ -1,0 +1,255 @@
+/* ==========================================
+   ESTILOS GENERALES Y TIPOGRAFÍA
+   ========================================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f7f6;
+    color: #333333;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+main {
+    max-width: 850px;
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+/* ==========================================
+   HEADER (MecaGest)
+   ========================================== */
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    border-bottom: 3px solid #0056b3;
+    padding-bottom: 15px;
+}
+
+header h1 {
+    color: #0056b3;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+header h2 {
+    color: #555555;
+    font-size: 1.3rem;
+    font-weight: 400;
+    margin-top: 5px;
+}
+
+header p {
+    color: #777777;
+    font-size: 0.95rem;
+    font-style: italic;
+}
+
+/* ==========================================
+   FORMULARIOS Y CAMPOS (Fieldsets y Labels)
+   ========================================== */
+fieldset {
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    padding: 20px;
+    margin-bottom: 25px;
+    background-color: #fafafa;
+}
+
+legend {
+    font-weight: bold;
+    color: #0056b3;
+    padding: 0 10px;
+    font-size: 1.1rem;
+}
+
+h4 {
+    color: #444444;
+    margin: 15px 0 10px 0;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 5px;
+}
+
+label {
+    display: inline-block;
+    width: 220px;
+    margin-bottom: 12px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #444444;
+    vertical-align: middle;
+}
+
+/* Inputs de texto, select, fechas y cajas de texto */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+input[type="url"],
+input[type="date"],
+input[type="time"],
+input[type="month"],
+input[type="datetime-local"],
+select,
+textarea {
+    width: calc(100% - 240px);
+    min-width: 250px;
+    padding: 8px 12px;
+    margin-bottom: 12px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 0.9rem;
+    transition: border-color 0.3s ease;
+    vertical-align: middle;
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: #0056b3;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 86, 179, 0.15);
+}
+
+textarea {
+    height: 80px;
+    resize: vertical;
+}
+
+/* Modificación para inputs con formato de Radio y Checkbox */
+input[type="checkbox"],
+input[type="radio"] {
+    margin-right: 5px;
+    transform: scale(1.1);
+    vertical-align: middle;
+}
+
+/* Inputs específicos que comparten fila (como las horas de contacto) */
+input[type="time"] {
+    width: auto;
+    min-width: auto;
+    margin-right: 10px;
+}
+
+/* Ocultar saltos de línea innecesarios ahora que usamos flex/inline-block */
+fieldset br {
+    display: none;
+}
+
+/* ==========================================
+   TABLAS (Visualización de Citas)
+   ========================================== */
+table {
+    width: 100% !important;
+    border-collapse: collapse;
+    margin: 15px 0;
+    font-size: 0.9rem;
+    background-color: #ffffff;
+}
+
+th, td {
+    border: 1px solid #dddddd !important;
+    padding: 10px 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #0056b3;
+    color: white;
+    font-weight: 600;
+}
+
+tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+/* ==========================================
+   BOTONES
+   ========================================== */
+button, 
+input[type="submit"], 
+input[type="reset"] {
+    padding: 10px 20px;
+    font-size: 0.95rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+
+input[type="submit"] {
+    background-color: #28a745;
+    color: white;
+}
+
+input[type="submit"]:hover {
+    background-color: #218838;
+}
+
+input[type="reset"] {
+    background-color: #dc3545;
+    color: white;
+}
+
+input[type="reset"]:hover {
+    background-color: #c82333;
+}
+
+button {
+    background-color: #0056b3;
+    color: white;
+}
+
+button:hover {
+    background-color: #004085;
+}
+
+button:disabled, input:disabled {
+    background-color: #cccccc !important;
+    color: #666666 !important;
+    cursor: not-allowed;
+}
+
+/* Ajuste para inputs de tipo color y rangos */
+input[type="color"] {
+    width: 50px;
+    height: 35px;
+    padding: 2px;
+    cursor: pointer;
+}
+
+input[type="range"] {
+    width: 200px;
+}
+
+/* Alineación especial para las filas de redes sociales */
+.red-social-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.red-social-row input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.red-social-row label {
+    width: 200px; /* Ajusta el espacio del texto */
+    margin-bottom: 0; /* Quita el espacio inferior para que no se desfase */
+}
+
+.red-social-row input[type="url"],
+.red-social-row input[type="file"] {
+    margin-bottom: 0; /* Evita que la caja de texto empuje otros elementos */
+}
