@@ -253,3 +253,28 @@ input[type="range"] {
 .red-social-row input[type="file"] {
     margin-bottom: 0; /* Evita que la caja de texto empuje otros elementos */
 }
+
+
+#resultadoEdad {
+    width: 100%;
+    padding: 20px 16px;
+    margin: 8px 0 15px;
+    border: 1px dashed #cccccc;
+    border-radius: 10px;
+    background-color: #f8f9fa;
+    font-weight: bold;
+    font-size: 0.9rem;
+    color: #667085;
+}
+
+.edad-estado--mayor {
+    color: #218052 !important;
+}
+
+.edad-estado--menor {
+    color: #c0392b !important;
+}
+
+.edad-estado--error {
+    color: #c0392b !important;
+}
